@@ -1,0 +1,10 @@
+name: Test Bloggy
+on:
+  push:
+jobs:
+  environnement:
+    runs-on: ubuntu-latest
+    steps:
+    - name: installation_dependance
+      run: npm install
+
