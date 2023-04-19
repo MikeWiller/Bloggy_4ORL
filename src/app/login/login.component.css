@@ -1,0 +1,48 @@
+.container {
+  margin-top: 50px;
+}
+
+.card {
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group {
+  margin: 3px;
+  margin-top: 10px;
+}
+
+.form-control {
+  margin: 3px;
+  margin-top: 10px;
+}
+
+.btn {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #1e951c;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #0d3b06;
+}
+
+.alert {
+  margin-top: 20px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}

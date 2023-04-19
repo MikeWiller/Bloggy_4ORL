@@ -1,0 +1,26 @@
+<div ng-app="myApp" ng-controller="myCtrl">
+	<header>
+		<h1>Our latest posts</h1>
+	</header>
+	<main>
+		<section class="post" *ngFor="let post of posts" style="box-shadow: 2px 2px 5px #999; border: 1px solid #ccc; padding: 10px;">
+			<img src="{{post.image_url}}" alt="Post image">
+			<div class="post-content">
+				<h2>{{post.title}}</h2> by <ng-container *ngFor="let author of auteurs" > <strong *ngIf="author.id == post.author_id"><em>{{author.full_name}}</em></strong></ng-container>
+				<p>{{post.resume.substring(0, 150)}}...</p>
+				<div class="read-more">
+					<button class="read-more-btn" href="#" (click)="detailsPost(post.id)" >Read more...</button>
+				</div>
+				<div class="date"> Publié le : {{post.created_at|date:"dd/MM/YYYY"}}
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+
+
+
+
+
+

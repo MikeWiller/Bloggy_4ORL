@@ -1,0 +1,33 @@
+
+<header>
+  <h2>Création de Post</h2>
+</header>
+<form #ajouterPost ="ngForm" (ngSubmit)="createPost(ajouterPost)">
+  <div class="mb-3">
+    <label for="titre" class="form-label">Titre du post</label>
+    <input type="text" class="form-control" id="titre" ngModel name="titre" aria-describedby="text" placeholder="Entrez le titre du post">
+  </div>
+  <div class="mb-3">
+    <label for="titre" class="form-label">Auteur</label>
+    <select class="form-select" ngModel name="auteur" aria-label="Default select example">
+
+      <option *ngFor="let author of auteurs" [value]="author.id">{{author.full_name}}</option>
+
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    <input type="text" class="form-control" id="image" ngModel name="image" aria-describedby="text" placeholder="Entrez le lien du l'image">
+  </div>
+  <div class="mb-3 form-floating">
+    <textarea class="form-control" placeholder="resume du  post" id="resume" ngModel name="resume" style="height: 100px"></textarea>
+    <label for="floatingTextarea2">Resumé</label>
+  </div>
+  <div class="mb-3 form-floating">
+    <textarea class="form-control" placeholder="contenue du post" id="contenu" ngModel  name="contenu" style="height: 100px"></textarea>
+    <label for="floatingTextarea2">Contenu</label>
+  </div>
+
+  <button type="submit" class="read-more-btn">Soumettre</button>
+</form>

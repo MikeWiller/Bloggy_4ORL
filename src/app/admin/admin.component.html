@@ -1,0 +1,37 @@
+
+<p></p>
+<button type="button" class="btn btn-dark create-post-btn" (click)="createPost()">
+  <div class="create-post-btn-content">
+  <i class="bi bi-plus"></i>
+  <span>+ Créer un Post</span>
+</div></button>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Image</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <th scope="row">{{post.id}}</th>
+      <th scope="col"><img style="height: 50px; width: 70px;" src="{{post.image_url}}"/></th>
+      <th scope="col">{{post.title}}</th>
+      <ng-container *ngFor="let author of auteurs" >
+      <th scope="col"  *ngIf="author.id == post.author_id">{{author.full_name}}</th>
+      </ng-container>
+      <th scope="col">{{post.created_at|date:"dd/MM/YYYY"}}</th>
+      <th scope="col">
+        <button class="btn btn-dark" (click)="deletePost(post.id,post.title)">Supprimer</button>
+        <button class="btn btn-primary" (click)="updatePost(post.id)">Editer</button>
+
+      </th>
+    </tr>
+
+  </tbody>
+</table>
+

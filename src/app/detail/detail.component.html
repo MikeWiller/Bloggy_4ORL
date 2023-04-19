@@ -1,0 +1,14 @@
+<header>
+  <h1>Post <strong> "{{post.title}}"</strong> par <ng-container *ngFor="let author of auteurs" > <strong *ngIf="author.id == post.author_id"><em>{{author.full_name}}</em></strong></ng-container> </h1>
+</header>
+<div class="post-details">
+  <div class="post-details-content">
+    <img src="{{post.image_url}}" alt="Image du post">
+    <h2>{{post.title}}</h2>
+    <p>{{post.content}}</p>
+    <div class="post-details-footer">
+      <span>Id de l'auteur : {{post.author_id}}</span>
+      <span> Publié le : {{post.created_at}}</span>
+    </div>
+  </div>
+</div>
